@@ -7,52 +7,50 @@ Try it is a powerful utility that wraps try-catch blocks in a function, allowing
 To install the utilities, you can use the following command:
 
 ```bash
-npm install  try-it
+npm install  try-handler
 ```
 
 ```bash
-pnpm add  try-it
+pnpm add  try-handler
 ```
 
 ```bash
-yarn add try-it
+yarn add try-handler
 ```
 
 ```bash
-bun add try-it
+bun add try-handler
 ```
 
 ## Usage
 
-
-
 ```javascript
-import { tryAsync, trySync } from 'try-it';
+import { tryAsync, trySync } from 'try-handler';
 
 const asyncGoodFunction = async () => Promise.resolve('Hello World');
-const asyncBadFunction = async () => Promise.reject(new Error('An error occurred'));
+const asyncBadFunction = async () =>
+  Promise.reject(new Error('An error occurred'));
 
 const syncGoodFunction = () => 'Hello World';
-const syncBadFunction = () => { throw new Error('An error occurred') };
+const syncBadFunction = () => {
+  throw new Error('An error occurred');
+};
 
-const [ data, error ] = await tryAsync(asyncGoodFunction);
+const [data, error] = await tryAsync(asyncGoodFunction);
 console.log(data); // Hello World
 console.log(error); // null
 
-const [ data, error ] = await tryAsync(asyncBadFunction);
+const [data, error] = await tryAsync(asyncBadFunction);
 console.log(data); // null
 console.log(error); // Error: An error occurred
 
-const [ data, error ] = trySync(syncGoodFunction);
+const [data, error] = trySync(syncGoodFunction);
 console.log(data); // Hello World
 console.log(error); // null
 
-const [ data, error ] = trySync(syncBadFunction);
+const [data, error] = trySync(syncBadFunction);
 console.log(data); // null
 console.log(error); // An error occurred
-
-
-
 ```
 
 ### 🛠️ Tools

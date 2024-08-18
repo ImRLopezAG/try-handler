@@ -1,10 +1,12 @@
 import assert from 'node:assert';
 import { describe, it } from 'node:test';
-import { tryAsync, trySync } from '../../apps/try-it/lib';
+import { tryAsync, trySync } from 'try-handler';
 
 describe('tryAsync', () => {
   it('should return data and null when the function is successful', async () => {
-    const [data, error] = await tryAsync(async () => Promise.resolve('Hello, world!'));
+    const [data, error] = await tryAsync(async () =>
+      Promise.resolve('Hello, world!')
+    );
     assert.strictEqual(data, 'Hello, world!');
     assert.strictEqual(error, null);
   });

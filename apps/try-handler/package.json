@@ -1,5 +1,5 @@
 {
-  "name": "try-it",
+  "name": "try-handler",
   "version": "0.0.0",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
@@ -17,7 +17,7 @@
   ],
   "author": "ImRLopezAG",
   "license": "GPL-3.0-only",
-  "homepage": "https://github.com/ImRLopezAG/try-it#readme",
+  "homepage": "https://github.com/ImRLopezAG/try-handler#readme",
   "publishConfig": {
     "access": "public"
   },
@@ -32,7 +32,6 @@
     }
   },
   "type": "module",
-
   "scripts": {
     "build": "tsup"
   },

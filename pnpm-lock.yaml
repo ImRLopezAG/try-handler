@@ -21,7 +21,7 @@ importers:
         specifier: ^2.0.14
         version: 2.0.14
 
-  apps/lets-try:
+  apps/try-handler:
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -52,9 +52,9 @@ importers:
 
   packages/tests:
     dependencies:
-      try-it:
+      try-handler:
         specifier: workspace:*
-        version: link:../../apps/lets-try
+        version: link:../../apps/try-handler
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*

@@ -1,0 +1,44 @@
+{
+  "name": "try-it",
+  "types": "./lib/index.d.ts",
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ImRLopezAG/try=it"
+  },
+  "keywords": [
+    "error",
+    "handling",
+    "try-catch"
+  ],
+  "author": "ImRLopezAG",
+  "license": "GPL-3.0-only",
+  "homepage": "https://github.com/ImRLopezAG/lets-try#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
+    },
+    "./lib": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
+    }
+  },
+  "type": "module",
+
+  "scripts": {
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "tsup": "^8.2.4",
+    "typescript": "5.5.4"
+  }
+}

@@ -13,6 +13,6 @@
     "tsup": "^8.1.0"
   },
   "dependencies": {
-    "lets-try": "workspace:*"
+    "try-it": "workspace:*"
   }
 }

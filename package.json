@@ -6,7 +6,7 @@
     "lint": "turbo lint",
     "reset": "turbo build --filter lets-try && turbo test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "test": "turbo test --filter @repo/tests"
+    "test": "turbo build && turbo test --filter @repo/tests"
   },
   "devDependencies": {
     "eslint": "^8.57.0",

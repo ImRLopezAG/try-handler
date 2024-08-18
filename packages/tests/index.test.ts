@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { describe, it } from 'node:test';
-import { tryAsync, trySync } from 'try-it';
+import { tryAsync, trySync } from '../../apps/try-it/lib';
 
 describe('tryAsync', () => {
   it('should return data and null when the function is successful', async () => {

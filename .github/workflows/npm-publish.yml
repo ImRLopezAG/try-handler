@@ -84,7 +84,7 @@ jobs:
       - name: publish
         if: ${{ env.skip == 'false' }}
         run: |
-          cd app/cy-utilities
+          cd apps/try-it
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

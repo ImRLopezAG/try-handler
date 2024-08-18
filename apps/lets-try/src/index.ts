@@ -9,7 +9,7 @@ export const tryAsync = async <T>(
     return [null, errorMessage];
   }
 };
-export const tryCatch = <T>(fn: () => T): [T | null, string | null] => {
+export const trySync = <T>(fn: () => T): [T | null, string | null] => {
   try {
     const data = fn();
     return [data, null];

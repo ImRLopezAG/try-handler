@@ -1,20 +1,22 @@
-export const tryAsync = async <T>(
+type TryResult<T> = [string | null, T | null,];
+
+export async function tryAsync <T>(
   fn: () => Promise<T>,
-): Promise<[T | null, string | null]> => {
+): Promise<TryResult<T>> {
   try {
     const data = await fn();
-    return [data, null];
+    return [null, data];
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
-    return [null, errorMessage];
+    return [errorMessage, null];
   }
 };
-export const trySync = <T>(fn: () => T): [T | null, string | null] => {
+export function trySync <T>(fn: () => T): TryResult<T> {
   try {
     const data = fn();
-    return [data, null];
+    return [null, data];
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
-    return [null, errorMessage];
+    return [errorMessage, null];
   }
 };

@@ -4,14 +4,15 @@ import { tryAsync, trySync } from 'try-handler';
 
 describe('tryAsync', () => {
   it('should return data and null when the function is successful', async () => {
-    const [data, error] = await tryAsync(async () =>
+    const [error, data] = await tryAsync(async () =>
       Promise.resolve('Hello, world!')
     );
     assert.strictEqual(data, 'Hello, world!');
     assert.strictEqual(error, null);
   });
+
   it('should return null and error message when the function throws an error', async () => {
-    const [data, error] = await tryAsync(async () => {
+    const [error, data] = await tryAsync(async () => {
       throw new Error('Something went wrong!');
     });
     assert.strictEqual(data, null);
@@ -19,13 +20,13 @@ describe('tryAsync', () => {
   });
 
   it('should return data and null when the function is successful', async () => {
-    const [data, error] = trySync(() => 'Hello, world!');
+    const [error, data] = trySync(() => 'Hello, world!');
     assert.strictEqual(data, 'Hello, world!');
     assert.strictEqual(error, null);
   });
 
   it('should return null and error message when the function throws an error', async () => {
-    const [data, error] = trySync(() => {
+    const [error, data] = trySync(() => {
       throw new Error('Something went wrong!');
     });
     assert.strictEqual(data, null);
@@ -33,7 +34,7 @@ describe('tryAsync', () => {
   });
 
   it('should return null and error message when the function throws an error', async () => {
-    const [data, error] = trySync(() => {
+    const [error, data] = trySync(() => {
       throw 'Something went wrong!';
     });
     assert.strictEqual(data, null);
@@ -41,7 +42,7 @@ describe('tryAsync', () => {
   });
 
   it('should return null and error message when the function throws an error', async () => {
-    const [data, error] = trySync(() => {
+    const [error, data] = trySync(() => {
       throw 404;
     });
     assert.strictEqual(data, null);
@@ -49,7 +50,7 @@ describe('tryAsync', () => {
   });
 
   it('should return null and error message when the function throws an error', async () => {
-    const [data, error] = trySync(() => {
+    const [error, data] = trySync(() => {
       throw null;
     });
     assert.strictEqual(data, null);
@@ -57,7 +58,7 @@ describe('tryAsync', () => {
   });
 
   it('should return TODOS and null when the function is successful calling an API', async () => {
-    const [data, error] = await tryAsync<
+    const [error, data] = await tryAsync<
       {
         userId: number;
         id: number;

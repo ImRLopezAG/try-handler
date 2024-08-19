@@ -36,19 +36,19 @@ const syncBadFunction = () => {
   throw new Error('An error occurred');
 };
 
-const [data, error] = await tryAsync(asyncGoodFunction);
+const [error, data] = await tryAsync(asyncGoodFunction);
 console.log(data); // Hello World
 console.log(error); // null
 
-const [data, error] = await tryAsync(asyncBadFunction);
+const [error, data] = await tryAsync(asyncBadFunction);
 console.log(data); // null
 console.log(error); // Error: An error occurred
 
-const [data, error] = trySync(syncGoodFunction);
+const [error, data] = trySync(syncGoodFunction);
 console.log(data); // Hello World
 console.log(error); // null
 
-const [data, error] = trySync(syncBadFunction);
+const [error, data] = trySync(syncBadFunction);
 console.log(data); // null
 console.log(error); // An error occurred
 ```

@@ -1,6 +1,6 @@
 {
   "name": "try-handler",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
   "files": [

@@ -1,6 +1,6 @@
 {
   "name": "try-handler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
   "files": [
@@ -8,7 +8,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ImRLopezAG/try=it"
+    "url": "https://github.com/ImRLopezAG/try-handler"
   },
   "keywords": [
     "error",

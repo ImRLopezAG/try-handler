@@ -1,8 +1,6 @@
-type TryResult<T> = [string | null, T | null,];
+type TryResult<T> = [string | null, T | null];
 
-export async function tryAsync <T>(
-  fn: () => Promise<T>,
-): Promise<TryResult<T>> {
+export async function tryAsync<T>(fn: () => Promise<T>): Promise<TryResult<T>> {
   try {
     const data = await fn();
     return [null, data];
@@ -10,8 +8,9 @@ export async function tryAsync <T>(
     const errorMessage = error instanceof Error ? error.message : String(error);
     return [errorMessage, null];
   }
-};
-export function trySync <T>(fn: () => T): TryResult<T> {
+}
+
+export function trySync<T>(fn: () => T): TryResult<T> {
   try {
     const data = fn();
     return [null, data];
@@ -19,4 +18,4 @@ export function trySync <T>(fn: () => T): TryResult<T> {
     const errorMessage = error instanceof Error ? error.message : String(error);
     return [errorMessage, null];
   }
-};
+}

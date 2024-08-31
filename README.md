@@ -29,13 +29,16 @@ The try-handler package provides two functions, `tryAsync` and `trySync`, which 
 ### Types
 
 ```ts
-type TryResult<T> = [ErrorHandling | null, T | null];
-type cb<T> = () => T;
+type TryResult<T> = [ErrorHandling, T | undefined];
+type Callback<T> = () => T;
 
 interface ErrorHandling {
   message: string;
-  stack: string | undefined;
-  instance: Error | unknown;
+  instance: {
+    stack: string | undefined;
+    name: string;
+    cause: unknown;
+  };
 }
 ```
 

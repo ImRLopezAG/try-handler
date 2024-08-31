@@ -48,7 +48,7 @@ describe('tryAsync', () => {
       throw new Error('Something went wrong!');
     });
     console.log(style('red', String(error)));
-    assert.strictEqual(data, null);
+    assert.strictEqual(data, undefined);
     assert.strictEqual(error?.message, 'Something went wrong!');
   });
 
@@ -75,7 +75,7 @@ describe('tryAsync', () => {
       return await response.json();
     });
     console.log(style('red', String(error?.message)));
-    assert.strictEqual(data, null);
+    assert.strictEqual(data, undefined);
     assert.strictEqual(error?.message, 'Not Found');
   });
 });
@@ -93,7 +93,7 @@ describe('trySync', () => {
       throw new Error('Something went wrong!');
     });
     console.log(style('red', String(error)));
-    assert.strictEqual(data, null);
+    assert.strictEqual(data, undefined);
     assert.strictEqual(error?.message, 'Something went wrong!');
   });
 
@@ -102,7 +102,7 @@ describe('trySync', () => {
       throw new Error('Something went wrong!');
     });
     console.log(style('red', String(error)));
-    assert.strictEqual(data, null);
+    assert.strictEqual(data, undefined);
     assert.strictEqual(error?.message, 'Something went wrong!');
   });
 
@@ -111,7 +111,7 @@ describe('trySync', () => {
       throw new Error('404');
     });
     console.log(style('red', String(error)));
-    assert.strictEqual(data, null);
+    assert.strictEqual(data, undefined);
     assert.strictEqual(error?.message, '404');
   });
 });

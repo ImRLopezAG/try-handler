@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@types/node':
-        specifier: ^22.4.0
-        version: 22.4.0
+        specifier: latest
+        version: 22.5.1
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -373,6 +373,9 @@ packages:
 
   '@types/node@22.4.0':
     resolution: {integrity: sha512-49AbMDwYUz7EXxKU/r7mXOsxwFr4BYbvB7tWYxVuLdb2ibd30ijjXINSMAHiEEZk5PCRBmW1gUeisn2VMKt3cQ==}
+
+  '@types/node@22.5.1':
+    resolution: {integrity: sha512-KkHsxej0j9IW1KKOOAA/XBA0z08UFSrRQHErzEfA3Vgq57eXIMYboIlHJuYIfd+lwCQjtKqUu3UnmKbtUc9yRw==}
 
   '@types/semver@7.5.6':
     resolution: {integrity: sha512-dn1l8LaMea/IjDoHNd9J52uBbInB796CDffS6VdIxvqYCPSG0V0DzHp76GpaWnlhg88uYyPbXCDIowa86ybd5A==}
@@ -1413,6 +1416,10 @@ snapshots:
   '@types/json-schema@7.0.15': {}
 
   '@types/node@22.4.0':
+    dependencies:
+      undici-types: 6.19.6
+
+  '@types/node@22.5.1':
     dependencies:
       undici-types: 6.19.6
 

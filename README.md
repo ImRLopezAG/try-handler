@@ -24,6 +24,23 @@ bun add try-handler
 
 ## Usage
 
+The try-handler package provides two functions, `tryAsync` and `trySync`, which allow you to handle errors in asynchronous and synchronous functions, respectively. The functions return an array with two elements, the first element is the error object, and the second element is the data returned by the function. These functions are useful when you want to handle errors in a more elegant way, without the need to write try-catch blocks in your code.
+
+### Types
+
+```ts
+type TryResult<T> = [ErrorHandling | null, T | null];
+type cb<T> = () => T;
+
+interface ErrorHandling {
+  message: string;
+  stack: string | undefined;
+  instance: Error | unknown;
+}
+```
+
+### Examples
+
 ```javascript
 import { tryAsync, trySync } from 'try-handler';
 
@@ -42,7 +59,7 @@ console.log(error); // null
 
 const [error, data] = await tryAsync(asyncBadFunction);
 console.log(data); // null
-console.log(error); // Error: An error occurred
+console.log(error.message); // Error: An error occurred
 
 const [error, data] = trySync(syncGoodFunction);
 console.log(data); // Hello World
@@ -50,7 +67,7 @@ console.log(error); // null
 
 const [error, data] = trySync(syncBadFunction);
 console.log(data); // null
-console.log(error); // An error occurred
+console.log(error.message); // An error occurred
 ```
 
 ### 🛠️ Tools
